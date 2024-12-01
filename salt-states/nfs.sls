@@ -12,3 +12,9 @@ push_nfs_conf:
     - name: /etc/exports
     - source: salt://nfs/nfs_config
 
+/media/nfs:
+  file.directory:
+    - user: vagrant
+    - group: users
+    - mode: 755
+
