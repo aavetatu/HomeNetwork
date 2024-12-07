@@ -7,14 +7,13 @@ start_nfs:
     - name: nfs-server
     - enable: True
 
-push_nfs_conf:
+/etc/exports:
   file.managed:
     - name: /etc/exports
-    - source: salt://nfs/nfs_config
+    - source: salt://nfs/server/nfs_config
 
 /media/nfs:
   file.directory:
     - user: vagrant
     - group: users
     - mode: 755
-
